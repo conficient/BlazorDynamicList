@@ -1,11 +1,43 @@
 ﻿@page "/"
-
+@using  Library1;
+@using  Library2;
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 
-<Library1.Component1></Library1.Component1>
+<h5>Pre-bound products:</h5>
+<Component1></Component1>
+<Component2></Component2>
+@*<Component1 bind-Product=@p1></Component1>
+<Component2 bind-Product=@p2></Component2>*@
 
-<Library1.Component2></Library1.Component2>
+<button onclick="@CreateProducts">Create Products</button>
+
+@functions {
+
+    Product1 p1 { get; set; }
+    Product2 p2 { get; set; }
+
+    void CreateProducts()
+    {
+        p1 = new Product1()
+        {
+            ID = 1,
+            Name = "Example product1",
+            Price = 123.45m,
+            Image = "https://dummyimage.com/64x64/f23/000.png&text=Product1",
+            HasFlange = true
+        };
+
+        p2 = new Product2()
+        {
+            ID = 2,
+            Name = "Sample product2",
+            Price = 45.67m,
+            Image = "https://dummyimage.com/64x64/3f3/000.png&text=Product2",
+            Grommets = 4
+        };
+}
+}

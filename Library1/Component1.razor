@@ -1,19 +1,22 @@
 ﻿<div class="library1">
     This Blazor component is defined in the <strong>Library1</strong> package.
 
-    @if (Product != null)
-    {
-        <div>
-            Product: @Product.Name
-
-            Has a Flange ?: @Product.HasFlange
-        </div>
-    } else
-    {
-        <div>
-            No product1 selected
-        </div>
-    }
+    <div>
+        @if (Product != null)
+        {
+            <text>
+                <img src="@Product.Image" class="rounded float-right" alt="@Product.Name">
+                Product: @Product.Name<br />
+                Has a Flange ?: @Product.HasFlange<br />
+            </text>
+        }
+        else
+        {
+            <b>
+                No product1 selected
+            </b>
+        }
+    </div>
 </div>
 
 @functions {

@@ -1,22 +1,24 @@
 ﻿<div class="library2">
     This Blazor component is defined in the <strong>Library2</strong> package.
 
-    @if (Product != null)
-    {
-        <div>
-            Product: @Product.Name
+    <div>
+        @if (Product != null)
+        {
+            <text>
+                <img src="@Product.Image" class="rounded float-right" alt="@Product.Name">
+                Product: @Product.Name<br />
 
-            Grommets: @Product.Grommets
-        </div>
-    }
-    else
-    {
-        <b>
-            No product2 selected
-        </b>
-    }
+                Grommets: @Product.Grommets<br />
+            </text>
+        }
+        else
+        {
+            <b>
+                No product2 selected
+            </b>
+        }
+    </div>
 </div>
-
 @functions {
 
     [Parameter]
