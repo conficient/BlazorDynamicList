@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BlazorDynamicList.Client\BlazorDynamicList.Client.csproj" />
     <ProjectReference Include="..\BlazorDynamicList.Shared\BlazorDynamicList.Shared.csproj" />
+    <ProjectReference Include="..\RepositoryLib\RepositoryLib.csproj" />
   </ItemGroup>
 
 </Project>

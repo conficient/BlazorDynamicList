@@ -20,6 +20,7 @@
     <ProjectReference Include="..\BlazorDynamicList.Shared\BlazorDynamicList.Shared.csproj" />
     <ProjectReference Include="..\Library1\Library1.csproj" />
     <ProjectReference Include="..\Library2\Library2.csproj" />
+    <ProjectReference Include="..\RepositoryLib\RepositoryLib.csproj" />
   </ItemGroup>
 
 </Project>

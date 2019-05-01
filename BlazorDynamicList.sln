@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28822.285
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDynamicList.Server", "BlazorDynamicList.Server\BlazorDynamicList.Server.csproj", "{78BF8C61-8498-41D1-84BB-3E49EB0F52EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDynamicList.Server", "BlazorDynamicList.Server\BlazorDynamicList.Server.csproj", "{78BF8C61-8498-41D1-84BB-3E49EB0F52EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDynamicList.Client", "BlazorDynamicList.Client\BlazorDynamicList.Client.csproj", "{D3297363-3D46-41AD-BC3E-1BD99B7256AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDynamicList.Client", "BlazorDynamicList.Client\BlazorDynamicList.Client.csproj", "{D3297363-3D46-41AD-BC3E-1BD99B7256AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDynamicList.Shared", "BlazorDynamicList.Shared\BlazorDynamicList.Shared.csproj", "{B2F1A7C0-FAF0-4E44-9AAC-EB0DD3FFE9E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDynamicList.Shared", "BlazorDynamicList.Shared\BlazorDynamicList.Shared.csproj", "{B2F1A7C0-FAF0-4E44-9AAC-EB0DD3FFE9E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library1", "Library1\Library1.csproj", "{266869EB-25FE-4E03-A5E3-B407A9F73652}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library2", "Library2\Library2.csproj", "{A91A835A-7902-49CA-843D-D66C8CC5E33E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseClasses", "BaseClasses\BaseClasses.csproj", "{F2834EBA-AF07-4486-AA50-1101FE5480ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseClasses", "BaseClasses\BaseClasses.csproj", "{F2834EBA-AF07-4486-AA50-1101FE5480ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryLib", "RepositoryLib\RepositoryLib.csproj", "{016B4C6C-DA29-44A1-8890-D2FD2EB44DE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F2834EBA-AF07-4486-AA50-1101FE5480ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2834EBA-AF07-4486-AA50-1101FE5480ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2834EBA-AF07-4486-AA50-1101FE5480ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{016B4C6C-DA29-44A1-8890-D2FD2EB44DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{016B4C6C-DA29-44A1-8890-D2FD2EB44DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{016B4C6C-DA29-44A1-8890-D2FD2EB44DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{016B4C6C-DA29-44A1-8890-D2FD2EB44DE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace BaseClasses
 {
@@ -12,6 +13,7 @@ namespace BaseClasses
 
         public abstract Type GetViewComponent();
         public abstract string GetViewComponentName();
+
 
     }
 }
