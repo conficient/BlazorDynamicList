@@ -1,0 +1,24 @@
+﻿<div class="library1">
+    This Blazor component is defined in the <strong>Library1</strong> package.
+
+    @if (Product != null)
+    {
+        <div>
+            Product: @Product.Name
+
+            Has a Flange ?: @Product.HasFlange
+        </div>
+    } else
+    {
+        <div>
+            No product1 selected
+        </div>
+    }
+</div>
+
+@functions {
+
+    [Parameter]
+    private Product1 Product { get; set; }
+
+}

@@ -1,0 +1,25 @@
+﻿<div class="library2">
+    This Blazor component is defined in the <strong>Library2</strong> package.
+
+    @if (Product != null)
+    {
+        <div>
+            Product: @Product.Name
+
+            Grommets: @Product.Grommets
+        </div>
+    }
+    else
+    {
+        <b>
+            No product2 selected
+        </b>
+    }
+</div>
+
+@functions {
+
+    [Parameter]
+    private Product2 Product { get; set; }
+
+}
