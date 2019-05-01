@@ -1,20 +1,12 @@
-﻿<div class="library1">
-    <span class="text-muted float-right">Component1</span>
+﻿<div class="library1flange">
+    <span class="text-muted float-right">Component1b</span>
     @if (Product != null)
     {
         <text>
             <img src="@Product.Image" class="rounded float-left mr-2" alt="@Product.Name">
             <h5>@Product.Name</h5>
             <p>Price: <b>$@Product.Price.ToString("#,##0.00")</b></p>
-            @if (Product.HasFlange)
-            {
-                <p>This product has a flange!</p>
-            }
-            else
-            {
-                <p class="text-muted">Sorry, no flange</p>
-            }
-
+            <b>FLANGE component view!</b>
         </text>
     }
     else

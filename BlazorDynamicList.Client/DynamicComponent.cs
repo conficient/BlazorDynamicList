@@ -22,9 +22,14 @@ namespace BlazorDynamicList.Client
         {
             base.BuildRenderTree(builder);
 
-            builder.OpenElement(0, "p");
-            builder.AddContent(1, Product?.Name);
-            builder.CloseElement();
+            Type componentType = Product.GetViewComponent();
+
+            builder.OpenComponent(0, componentType);
+            builder.AddAttribute(1, "Product", Product);
+            builder.CloseComponent();
+            //builder.OpenElement(0, "p");
+            //builder.AddContent(1, Product?.Name);
+            //builder.CloseElement();
         }
     }
 }

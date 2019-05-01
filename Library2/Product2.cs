@@ -17,9 +17,5 @@ namespace Library2
             return typeof(Component2);
         }
 
-        public override string GetViewComponentName()
-        {
-            return typeof(Component2).FullName;
-        }
     }
 }

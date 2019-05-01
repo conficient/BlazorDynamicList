@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <None Remove="content\background.png" />
+    <None Remove="content\flange.png" />
   </ItemGroup>
 
   <ItemGroup>

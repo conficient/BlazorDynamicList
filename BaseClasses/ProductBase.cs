@@ -12,7 +12,6 @@ namespace BaseClasses
         public string Image { get; set; }
 
         public abstract Type GetViewComponent();
-        public abstract string GetViewComponentName();
 
 
     }

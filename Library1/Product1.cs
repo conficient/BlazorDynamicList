@@ -12,14 +12,17 @@ namespace Library1
         /// </summary>
         public bool HasFlange { get; set; }
 
+        /// <summary>
+        /// Tell the consumer which component to use to view
+        /// </summary>
+        /// <returns></returns>
         public override Type GetViewComponent()
         {
-            return typeof(Component1);
+            if (HasFlange)
+                return typeof(Component1b);
+            else
+                return typeof(Component1);
         }
 
-        public override string GetViewComponentName()
-        {
-            return typeof(Component1).FullName;
-        }
     }
 }

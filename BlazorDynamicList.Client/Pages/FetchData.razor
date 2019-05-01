@@ -17,9 +17,10 @@ else
                 @foreach (var product in products)
                 {
                     <li class="list-group-item">
+                        <span class="text-muted float-right">@product.ID</span>
                         <img src="@product.Image" class="rounded float-left mr-2" alt="@product.Name">
                         <h5>@product.Name</h5>
-                        <p>Price: <b>$@product.Price.ToString("#,##0.00")</b> <span class="text-muted">@product.ID</span></p>
+                        <p>Price: <b>$@product.Price.ToString("#,##0.00")</b> </p>
                     </li>
                 }
             </ul>
@@ -40,7 +41,7 @@ else
             }
         </div>
         <div class="col">
-            <h5>List with manual binding to component</h5>
+            <h5>List with dynamic binding to <code>DynamicComponent</code>.</h5>
             @foreach (var product in products)
             {
                 <DynamicComponent Product=@product />

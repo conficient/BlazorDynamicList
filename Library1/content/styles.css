@@ -4,8 +4,15 @@
 */
 
 .library1 {
-    border: 2px dashed red;
+    border: 2px dotted red;
     padding: 1em;
     margin: 1em 0;
     background-image: url('background.png');
+}
+
+.library1flange {
+    border: 2px solid red;
+    padding: 1em;
+    margin: 1em 0;
+    background-image: url('flange.png');
 }
