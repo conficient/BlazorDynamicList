@@ -18,7 +18,9 @@ steps:
   inputs:
     version: 3.0.100-preview4-011223
 
-- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
+#- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
+#  displayName: 'Building $(buildConfiguration)...'
+- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList\BlazorDynamicList.Server.csproj
   displayName: 'Building $(buildConfiguration)...'
 
 - task: DotNetCoreCLI@2
