@@ -17,7 +17,7 @@ steps:
   displayName: 'Installing .NET Core SDK...'
   inputs:
     version: 3.0.100-preview-010184
-    
+
 - script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
   displayName: 'Building $(buildConfiguration)...'
 
@@ -28,6 +28,3 @@ steps:
     publishWebProjects: true
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)
     zipAfterPublish: false
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publishing Build Artifacts...'
