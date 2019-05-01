@@ -18,17 +18,17 @@ steps:
   inputs:
     version: 3.0.100-preview4-011223
 
-#- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
-#  displayName: 'Building $(buildConfiguration)...'
-- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
+- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
   displayName: 'Building $(buildConfiguration)...'
+#- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
+#  displayName: 'Building $(buildConfiguration)...'
 
 - task: DotNetCoreCLI@2
   displayName: 'Publishing App...'
   inputs:
-    command: publish
+    command: publish 
     publishWebProjects: true
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) BlazorDynamicList.Server\BlazorDynamicList.Server.csproj'
     zipAfterPublish: false
 
 - task: PublishBuildArtifacts@1
