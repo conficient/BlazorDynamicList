@@ -20,7 +20,7 @@ steps:
 
 #- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
 #  displayName: 'Building $(buildConfiguration)...'
-- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList\BlazorDynamicList.Server.csproj
+- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
   displayName: 'Building $(buildConfiguration)...'
 
 - task: DotNetCoreCLI@2
