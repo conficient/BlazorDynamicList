@@ -3,9 +3,10 @@
 > Note: the code for this example uses Blazor 3.0.0-preview4-19216-03
 
 This demo application shows how Blazor's component model permits 
-us to easily encapsulate code, UI and behaviours in reusable modules.
+us to easily encapsulate code, UI and behaviours in reusable modules, 
+and even load components dynamically in code.
 
-A demo is hosted at https://BlazorDynamicList.azurewebsites.net 
+A demo is hosted at https://blazordynamiclist.azurewebsites.net 
 
 ## Background
 
@@ -18,7 +19,7 @@ libraries as neither ASP.NET or JavaScript really lends themselves to this.
 
 This results in a lot of supplier-specific and product-specific UI in 
 the ASP.NET project, resulting in a monolithic web app that is 
-disconnected from the product code.
+only losely bound to the product code.
 
 ### Blazor
 
@@ -35,7 +36,7 @@ model permits us to encapsulate the UI in these libraries as well.
 
 So I decided to write this project as a proof-of-concept. Could I encapsulate
 behaviours and UI in libraries, and then handle generic lists of objects 
-and display the correct UI for each on?
+and display the correct UI for each one?
 
 ## Overview
 
@@ -56,19 +57,20 @@ The project uses the Blazor (ASP.NET Core hosted) template as a starting point.
 
 ### Product Libraries
 
+
+I created a .NET Standard library **BaseClasses** 
+to hold a common `ProductBase` abstract base class, which has `ID`, `Name`, 
+`Price` and `Image` properties. It also defines an abstract method `GetViewComponent()` that returns the 
+type of the Razor Component we want to use to view the product.
+
 I then added new Blazor library projects **Library1** and **Library2** using 
 the console command `dotnet new blazorlib -o Library1` etc. These represent 
-our two product libraries. I then created a .NET Standard library **BaseClasses** 
-to hold a common `ProductBase` abstract base class, which has `ID`, `Name`, 
-`Price` and `Image` properties. 
-
-It also defines an abstract method `GetViewComponent()` that returns the 
-type of the Razor Component we want to use to view the product.
+our two product libraries. `Product1` and `Product2` inherit from `ProductBase`.
 
 I also created a **RepositoryLib** .NET Standard library which represents 
 our 'datasource' (which in a real-world example would be a database of 
 some kind). The `ProductRepository` class just generates random products 
-of either type in the `GetProducts()` method.
+of either type using the `GetProducts()` method.
 
 ### Index
 
@@ -79,7 +81,7 @@ to page properties `p1` and `p2` respectively.
 These are initially `null` but are populated using the button. You should 
 see the products render when the button is clicked.
 
-[img]
+![Index.razor](img/Index.png)
 
 ### FetchData
 
@@ -117,11 +119,10 @@ The FetchData page can then deserialize as follows:
 
 The page shows the list of products in three different ways.
 
-[img]
+![FetchData.razor](img/FetchData.png)
 
-The first just
-shows a list of `ProductBase` values - only the common properties are available 
-when we do this.
+The first just shows a list of `ProductBase` values - only the common 
+properties can be used when we do this.
 
 #### If-then-else
 The second list shows a manual `if-then-else` type of binding where we check 
@@ -141,10 +142,11 @@ the product type and show a bound component manually selecting either
         }
     }
 ```
-While this works for two products, image if we had hundreds or even thousands! 
-And it doesn't display the correct one for Product1 if it has a flange.
+While this works for two products, if we had hundreds or even thousands
+of products this becomes a nightmare. Worse, it's putting product specific
+logic into the web application and making maintaining it much harder.
 
-#### DynamicComponent
+#### Dynamic Component
 
 The third list is the cool one! We display each product using a `DynamicComponent`:
 ```cs
@@ -153,6 +155,9 @@ The third list is the cool one! We display each product using a `DynamicComponen
         <DynamicComponent Product=@product />
     }
 ```
+This dynamic component selects and binds the correct component for each product. 
+Also notice it uses the correct `<Component1b>` if the `HasFlange` property is set.
+
 The code for this class is in the root of the Blazor client (although really it 
 should be in the BaseClasses library). This is a manually coded Razor Component
 that determines which component to use by calling the `GetComponentType()` method.
@@ -168,4 +173,18 @@ It then manually builds the render tree, binding the property thus:
         builder.CloseComponent();
     }
 ```
+I figured out the syntax by simply looking at the generated C# code for the `Index.razor`
+page in the file `BlazorDynamicList.Client\obj\Debug\netstandard2.0\Razor\Pages\Index.razor.g.s`
 
+### Other interesting points
+
+You may notice both product libraries come with `styles.css` and 
+`background.png` files. These are loaded by Blazor for us as virtual
+libraries e.g. `/_content/Library1/styles.css`
+
+
+### Acknowledgements
+
+Thanks to all those fellow Blazorians on [Gitter](https://gitter.im/aspnet/Blazor) and
+especially to [Chris Sainty](https://chrissainty.com) for his excellent Blog articles on 
+how to use Github and Azure pipelines to publish the site.
