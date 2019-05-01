@@ -5,7 +5,7 @@
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules.
 
-A demo is hosted at https://blazorDynamicList.azurewebsites.net 
+A demo is hosted at https://BlazorDynamicList.azurewebsites.net 
 
 ## Background
 
