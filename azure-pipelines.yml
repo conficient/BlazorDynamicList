@@ -27,7 +27,7 @@ steps:
   displayName: 'Publishing App...'
   inputs:
     command: publish 
-    publishWebProjects: true
+    projects: BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) BlazorDynamicList.Server\BlazorDynamicList.Server.csproj'
     zipAfterPublish: false
 
