@@ -81,7 +81,8 @@ to page properties `p1` and `p2` respectively.
 These are initially `null` but are populated using the button. You should 
 see the products render when the button is clicked.
 
-![Index.razor](img/Index.png)
+![Index.razor](https://github.com/conficient/BlazorDynamicList/blob/master/img/index.png)
+
 
 ### FetchData
 
@@ -118,8 +119,8 @@ The FetchData page can then deserialize as follows:
 ### List Display
 
 The page shows the list of products in three different ways.
+![FetchData.razor](https://github.com/conficient/BlazorDynamicList/blob/master/img/fetchdata.png)
 
-![FetchData.razor](img/FetchData.png)
 
 The first just shows a list of `ProductBase` values - only the common 
 properties can be used when we do this.
