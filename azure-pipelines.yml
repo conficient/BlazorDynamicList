@@ -23,7 +23,7 @@ steps:
 #- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
 #  displayName: 'Building $(buildConfiguration)...'
 
-- script: dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --self-contained true BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
+- script: dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --self-contained true --runtime win-x86 BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
   displayName: 'Building $(buildConfiguration)...'
   
 # - task: DotNetCoreCLI@2
