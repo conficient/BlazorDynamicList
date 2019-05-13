@@ -1,6 +1,6 @@
 # BlazorDynamicList sample
 
-> Note: the code for this example uses Blazor 3.0.0-preview4-19216-03
+> Note: the code for this example uses Blazor 3.0.0-preview5-19227-01
 
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules, 
