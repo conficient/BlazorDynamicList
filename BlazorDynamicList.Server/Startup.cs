@@ -33,14 +33,15 @@ namespace BlazorDynamicList.Server
                 app.UseBlazorDebugging();
             }
 
-            app.UseRouting();
+            app.UseClientSideBlazorFiles<Client.Startup>();
 
+            app.UseRouting();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
             });
-
-            app.UseBlazor<Client.Startup>();
         }
     }
 }
