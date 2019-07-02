@@ -43,7 +43,7 @@ namespace BlazorDynamicList.Server
 #if DEBUG
                 endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
 #else
-                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("_content/BlazorDynamicList.Client/index.html");
+                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("wwwroot/_content/blazordynamiclistclient/index.html");
 #endif
             });
         }
