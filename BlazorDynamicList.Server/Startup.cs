@@ -40,7 +40,11 @@ namespace BlazorDynamicList.Server
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+#if DEBUG
                 endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
+#else
+                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("_content/BlazorDynamicList.Client/index.html");
+#endif
             });
         }
     }
