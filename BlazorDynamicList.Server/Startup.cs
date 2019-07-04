@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
+using System.IO;
 using System.Linq;
 
 namespace BlazorDynamicList.Server
@@ -36,15 +38,23 @@ namespace BlazorDynamicList.Server
             app.UseClientSideBlazorFiles<Client.Startup>();
 
             app.UseRouting();
-            
+
+#if DEBUG
+            app.UseStaticFiles();
+#else
+            // added at suggestion https://github.com/aspnet/websdk/issues/604#issuecomment-507871683
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "_content", "blazordynamiclistclient")),
+                RequestPath = ""
+            });
+#endif
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-#if DEBUG
                 endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
-#else
-                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("wwwroot/_content/blazordynamiclistclient/index.html");
-#endif
             });
         }
     }
