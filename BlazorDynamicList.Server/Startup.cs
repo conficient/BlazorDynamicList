@@ -39,23 +39,45 @@ namespace BlazorDynamicList.Server
 
             app.UseRouting();
 
-#if DEBUG
-            app.UseStaticFiles();
-#else
-            // added at suggestion https://github.com/aspnet/websdk/issues/604#issuecomment-507871683
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "_content", "blazordynamiclistclient")),
-                RequestPath = ""
-            });
-#endif
+            const string blazorClient = "blazordynamiclistclient";
+
+            ConfigureStatics(app, blazorClient);
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
+                MapBlazorFallback(endpoints, blazorClient);
             });
+        }
+
+
+        private static void ConfigureStatics(IApplicationBuilder app, string projectName)
+        {
+#if DEBUG
+            app.UseStaticFiles();
+
+#else
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/_content/{{{projectName}}}")),
+                RequestPath = new PathString("")
+            }); 
+#endif
+        }
+
+        private static void MapBlazorFallback(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints, string projectName)
+        {
+            //This is a workaround for an issue with p6 that creates a different folder
+            //structure on publish than the one expected by the blazor fallback
+            //for more info go to
+            // https://github.com/aspnet/AspNetCore/issues/11185
+            string blazorFallbackPath;
+#if DEBUG
+            blazorFallbackPath = "index.html";
+#else
+                blazorFallbackPath = $"_content/{{{projectName}}}/index.html";
+#endif
+            endpoints.MapFallbackToClientSideBlazor<Client.Startup>(blazorFallbackPath);
         }
     }
 }
