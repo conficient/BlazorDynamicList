@@ -7,7 +7,6 @@ us to easily encapsulate code, UI and behaviours in reusable modules,
 and even load components dynamically in code.
 
 A demo is hosted at https://blazordynamiclist.azurewebsites.net 
-> #### The website is currently down due to a build issue with publishing self-contained Blazor apps: https://github.com/aspnet/websdk/issues/604
 
 ## Background
 
