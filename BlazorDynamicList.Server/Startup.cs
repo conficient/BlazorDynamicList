@@ -59,7 +59,7 @@ namespace BlazorDynamicList.Server
 #else
             app.UseStaticFiles(new StaticFileOptions()
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/_content/{{{projectName}}}")),
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/_content/{projectName}")),
                 RequestPath = new Microsoft.AspNetCore.Http.PathString("")
             });
 #endif
@@ -75,7 +75,7 @@ namespace BlazorDynamicList.Server
 #if DEBUG
             blazorFallbackPath = "index.html";
 #else
-            blazorFallbackPath = $"_content/{{{projectName}}}/index.html";
+            blazorFallbackPath = $"_content/{projectName}/index.html";
 #endif
             endpoints.MapFallbackToClientSideBlazor<Client.Startup>(blazorFallbackPath);
         }
