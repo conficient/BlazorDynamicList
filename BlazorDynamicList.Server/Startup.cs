@@ -35,49 +35,17 @@ namespace BlazorDynamicList.Server
                 app.UseBlazorDebugging();
             }
 
+            app.UseStaticFiles();
             app.UseClientSideBlazorFiles<Client.Startup>();
 
             app.UseRouting();
 
-            const string blazorClient = "blazordynamiclistclient";
-
-            ConfigureStatics(app, blazorClient);
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-                MapBlazorFallback(endpoints, blazorClient);
+                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
             });
         }
 
-
-        private static void ConfigureStatics(IApplicationBuilder app, string projectName)
-        {
-#if DEBUG
-            app.UseStaticFiles();
-
-#else
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/_content/{projectName}")),
-                RequestPath = new Microsoft.AspNetCore.Http.PathString("")
-            });
-#endif
-        }
-
-        private static void MapBlazorFallback(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints, string projectName)
-        {
-            //This is a workaround for an issue with p6 that creates a different folder
-            //structure on publish than the one expected by the blazor fallback
-            //for more info go to
-            // https://github.com/aspnet/AspNetCore/issues/11185
-            string blazorFallbackPath;
-#if DEBUG
-            blazorFallbackPath = "index.html";
-#else
-            blazorFallbackPath = $"_content/{projectName}/index.html";
-#endif
-            endpoints.MapFallbackToClientSideBlazor<Client.Startup>(blazorFallbackPath);
-        }
     }
 }

@@ -1,6 +1,6 @@
 # BlazorDynamicList sample
 
-> Note: the code for this example uses Blazor 3.0.100-preview6-012264
+> Note: the code for this example uses Blazor 3.0.100-preview7-012821
 
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules, 
@@ -13,9 +13,10 @@ A demo is hosted at https://blazordynamiclist.azurewebsites.net
 I currently have a large ASP.NET web application which has services
 for a wide range of products and services it must support.
 
-Each product has its own settings, properties and behavior. Although I can encapsulate the product behaviours in 
-class libraries, it's been very hard to create UI in these class 
-libraries as neither ASP.NET or JavaScript really lends themselves to this.
+Each product has its own settings, properties and behavior. Although I can
+encapsulate the product behaviours in class libraries, it's been very hard 
+to create UI in these class libraries as neither ASP.NET or JavaScript 
+really lends themselves to this.
 
 This results in a lot of supplier-specific and product-specific UI in 
 the ASP.NET project, resulting in a monolithic web app that is 
@@ -48,8 +49,8 @@ property. We want to have a custom view that shows each product according to
 its type and is contained in the same library that defines the ProductX class.
 
 `Component1` displays a Product1 and `Component2` displays a Product2. 
-In a further wrinkle I decided that any Product1 that has `HasFlange` true 
-should use the `Component1b` component.
+In a further complication I decided that any Product1 that has `HasFlange` 
+set as true should use the `Component1b` component.
 
 ## Creation
 
@@ -57,10 +58,9 @@ The project uses the Blazor (ASP.NET Core hosted) template as a starting point.
 
 ### Product Libraries
 
-
-I created a .NET Standard library **BaseClasses** 
-to hold a common `ProductBase` abstract base class, which has `ID`, `Name`, 
-`Price` and `Image` properties. It also defines an abstract method `GetViewComponent()` that returns the 
+I created a .NET Standard library **BaseClasses** to hold a common `ProductBase` 
+abstract base class, which has `ID`, `Name`, `Price` and `Image` properties. 
+It also defines an abstract method `GetViewComponent()` that returns the 
 type of the Razor Component we want to use to view the product.
 
 I then added new Blazor library projects **Library1** and **Library2** using 
