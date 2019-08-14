@@ -16,7 +16,7 @@ namespace BlazorDynamicList.Client
         
         
         [Parameter]
-        private ProductBase Product { get; set; }
+        public ProductBase Product { get; set; }
 
         protected override void BuildRenderTree(RenderTreeBuilder builder)
         {
