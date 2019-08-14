@@ -57,7 +57,7 @@ else
 @code {
     ProductBase[] products;
 
-    protected override async Task OnInitAsync()
+    protected override async Task OnInitializedAsync()
     {
         // get sample data as JSON string
         var json = await Http.GetStringAsync("api/SampleData/Products?count=6");
