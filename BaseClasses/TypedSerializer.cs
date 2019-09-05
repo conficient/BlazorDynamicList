@@ -7,6 +7,9 @@ using System.Text;
 
 namespace BaseClasses
 {
+    /// <summary>
+    /// Helper class to serialize/deserialise with typename handling
+    /// </summary>
     public static class TypedSerializer
     {
         /// <summary>
