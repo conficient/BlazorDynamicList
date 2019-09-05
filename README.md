@@ -1,6 +1,7 @@
 # BlazorDynamicList sample
 
-> Note: the code for this example uses Blazor 3.0.100-preview7-012821
+[![Build Status](https://dev.azure.com/conficient/BlazorDynamicList/_apis/build/status/conficient.BlazorDynamicList?branchName=master)](https://dev.azure.com/conficient/BlazorDynamicList/_build/latest?definitionId=1&branchName=master)
+> Note: the code for this example uses Blazor 3.0.100-preview9-014004
 
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules, 
@@ -81,7 +82,7 @@ to page properties `p1` and `p2` respectively.
 These are initially `null` but are populated using the button. You should 
 see the products render when the button is clicked.
 
-![Index.razor](https://github.com/conficient/BlazorDynamicList/blob/master/img/index.png)
+![Index.razor](./img/index.png)
 
 
 ### FetchData
@@ -119,7 +120,7 @@ The FetchData page can then deserialize as follows:
 ### List Display
 
 The page shows the list of products in three different ways.
-![FetchData.razor](https://github.com/conficient/BlazorDynamicList/blob/master/img/fetchdata.png)
+![FetchData.razor](./img/fetchdata.png)
 
 
 The first just shows a list of `ProductBase` values - only the common 
