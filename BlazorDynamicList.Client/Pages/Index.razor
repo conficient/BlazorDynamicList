@@ -2,7 +2,7 @@
 @using Library1;
 @using Library2;
 <h1>Dynamic Component Binding</h1>
-<p>See the ReadMe on GitHub for discussion</p>
+<p>See the <a href="https://github.com/conficient/BlazorDynamicList">ReadMe</a> on GitHub for discussion</p>
 <h5>Examples of the two Components</h5>
 <div class="row">
     <div class="col">
@@ -14,7 +14,10 @@
 </div>
 
 <button @onclick="@CreateProducts">Create Products</button>
-
+<p>
+    Here we have examples of <b>Component1</b> and <b>Component2</b> used directly.
+    Select the <i>Fetch Data</i> page to see the dynamic list
+</p>
 @code {
 
     Product1 p1 { get; set; }

@@ -13,20 +13,22 @@ else
     <div class="row">
         <div class="col">
             <h5>Generic list of <code>ProductBase</code> types</h5>
+            <p>We can only view the common <code>ProductBase</code> properties</p>
             <ul class="list-group">
                 @foreach (var product in products)
                 {
                     <li class="list-group-item">
-                        <span class="text-muted float-right">@product.ID</span>
                         <img src="@product.Image" class="rounded float-left mr-2" alt="@product.Name">
                         <h5>@product.Name</h5>
                         <p>Price: <b>$@product.Price.ToString("#,##0.00")</b> </p>
+                        <span class="text-muted float-right">@product.ID</span>
                     </li>
                 }
             </ul>
         </div>
         <div class="col">
             <h5>List with manual binding to component</h5>
+            <p>We have to manually select the component to use.</p>
             @foreach (var product in products)
             {
                 @* here we manually bind - simple with two, but quickly becomes untenable with say a hundred product types! *@
@@ -42,6 +44,7 @@ else
         </div>
         <div class="col">
             <h5>List with dynamic binding to <code>DynamicComponent</code>.</h5>
+            <p>The selection of the view component is now encapsulated within the <code>DynamicComponent</code>.</p>
             @foreach (var product in products)
             {
                 <DynamicComponent Product=@product />
