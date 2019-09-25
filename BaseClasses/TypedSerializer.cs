@@ -25,6 +25,11 @@ namespace BaseClasses
             });
         }
 
+        /// <summary>
+        /// Deserialize a an object with TypeNameHandling 
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
         public static object Deserialize(string json)
         {
             return JsonConvert.DeserializeObject(json, new JsonSerializerSettings()
