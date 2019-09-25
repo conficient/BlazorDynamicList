@@ -1,7 +1,7 @@
 # BlazorDynamicList sample
 
 [![Build Status](https://dev.azure.com/conficient/BlazorDynamicList/_apis/build/status/conficient.BlazorDynamicList?branchName=master)](https://dev.azure.com/conficient/BlazorDynamicList/_build/latest?definitionId=1&branchName=master)
-> Note: the code for this example uses Blazor 3.0.100-preview9-014004
+> Note: the code for this example uses Blazor 3.0.100-RTM
 
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules, 
@@ -29,7 +29,7 @@ When Blazor came onto the scene in 2017, I was excited for two reasons.
 
 First, the ability to use C# in the client meant we no longer had to 
 re-write the same C# code in JavaScript to get front-end behaviours. The 
-server and the client can shared the models.
+server and the client can share the models.
 
 Secondly, and in my opinion more importantly, Blazor's excellent component 
 model permits us to encapsulate the UI in these libraries as well.
