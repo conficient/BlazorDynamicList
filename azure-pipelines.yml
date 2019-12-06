@@ -20,20 +20,10 @@ steps:
 
 - script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
   displayName: 'Building $(buildConfiguration)...'
-#- script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
-#  displayName: 'Building $(buildConfiguration)...'
 
 # added '--framework netcoreapp3.0' fix: see https://github.com/aspnet/websdk/issues/604
 - script: dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --framework netcoreapp3.1 --self-contained true --runtime win-x86 BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
   displayName: 'Building $(buildConfiguration)...'
   
-# - task: DotNetCoreCLI@2
-#   displayName: 'Publishing App...'
-#   inputs:
-#     command: publish 
-#     projects: BlazorDynamicList.Server\BlazorDynamicList.Server.csproj
-#     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-#     zipAfterPublish: false
-
 - task: PublishBuildArtifacts@1
   displayName: 'Publishing Build Artifacts...'
