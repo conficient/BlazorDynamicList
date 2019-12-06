@@ -14,9 +14,9 @@ variables:
 
 steps:
 - task: DotNetCoreInstaller@0
-  displayName: 'Installing .NET Core SDK for 3.1.100-preview2-014569'
+  displayName: 'Installing .NET Core SDK for 3.1.100'
   inputs:
-    version: 3.1.100-preview2-014569
+    version: 3.1.100
 
 - script: dotnet build --configuration $(buildConfiguration) BlazorDynamicList.sln
   displayName: 'Building $(buildConfiguration)...'

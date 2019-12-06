@@ -1,7 +1,7 @@
 # BlazorDynamicList sample
 
 [![Build Status](https://dev.azure.com/conficient/BlazorDynamicList/_apis/build/status/conficient.BlazorDynamicList?branchName=master)](https://dev.azure.com/conficient/BlazorDynamicList/_build/latest?definitionId=1&branchName=master)
-> Note: the code for this example uses Blazor 3.0.100-RTM
+> Note: the code for this example uses Blazor 3.1.100
 
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules, 
@@ -190,3 +190,7 @@ libraries e.g. `/_content/Library1/styles.css`
 Thanks to all those fellow Blazorians on [Gitter](https://gitter.im/aspnet/Blazor) and
 especially to [Chris Sainty](https://chrissainty.com) for his excellent Blog articles on 
 how to use Github and Azure pipelines to publish the site.
+
+### Updates
+
+Updated application to .NET Core 3.1 and .NET Standard 2.1
