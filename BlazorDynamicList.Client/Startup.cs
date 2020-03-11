@@ -1,17 +1,17 @@
-using Microsoft.AspNetCore.Components.Builder;
-using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.AspNetCore.Components.Builder;
+//using Microsoft.Extensions.DependencyInjection;
 
-namespace BlazorDynamicList.Client
-{
-    public class Startup
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {
-        }
+//namespace BlazorDynamicList.Client
+//{
+//    public class Startup
+//    {
+//        public void ConfigureServices(IServiceCollection services)
+//        {
+//        }
 
-        public void Configure(IComponentsApplicationBuilder app)
-        {
-            app.AddComponent<App>("app");
-        }
-    }
-}
+//        public void Configure(IComponentsApplicationBuilder app)
+//        {
+//            app.AddComponent<App>("app");
+//        }
+//    }
+//}
