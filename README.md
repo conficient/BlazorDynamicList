@@ -1,7 +1,7 @@
 # BlazorDynamicList sample
 
 [![Build Status](https://dev.azure.com/conficient/BlazorDynamicList/_apis/build/status/conficient.BlazorDynamicList?branchName=master)](https://dev.azure.com/conficient/BlazorDynamicList/_build/latest?definitionId=1&branchName=master)
-> Note: the code for this example uses Blazor 3.1.100
+> Note: the code for this example uses Blazor WebAssembly 3.2.0 Preview 2
 
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules, 
