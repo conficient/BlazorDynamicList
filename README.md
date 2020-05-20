@@ -1,7 +1,7 @@
 # BlazorDynamicList sample
 
 [![Build Status](https://dev.azure.com/conficient/BlazorDynamicList/_apis/build/status/conficient.BlazorDynamicList?branchName=master)](https://dev.azure.com/conficient/BlazorDynamicList/_build/latest?definitionId=1&branchName=master)
-> Note: the code for this example uses Blazor WebAssembly 3.2.0 Preview 2
+> Note: the code for this example uses Blazor WebAssembly 3.2.0 RTM
 
 This demo application shows how Blazor's component model permits 
 us to easily encapsulate code, UI and behaviours in reusable modules, 
@@ -193,4 +193,6 @@ how to use Github and Azure pipelines to publish the site.
 
 ### Updates
 
-Updated application to .NET Core 3.1 and .NET Standard 2.1
+Updated application to .NET Core 3.1 and .NET Standard 2.1, and now to 
+[Blazor 3.2 RTM](https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-now-available/)
+as Blazor WASM is now an official, supported product!
