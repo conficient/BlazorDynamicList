@@ -162,7 +162,7 @@ Also notice it uses the correct `<Component1b>` if the `HasFlange` property is s
 
 The code for this class is in the root of the Blazor client (although really it 
 should be in the BaseClasses library). This is a manually coded Razor Component
-that determines which component to use by calling the `GetComponentType()` method.
+that determines which component to use by calling the `GetViewComponent()` method.
 
 It then manually builds the render tree, binding the property thus:
 ```cs
