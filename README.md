@@ -7,8 +7,6 @@ This demo application shows how Blazor's component model permits
 us to easily encapsulate code, UI and behaviours in reusable modules, 
 and even load components dynamically in code.
 
-A demo is hosted at https://blazordynamiclist.azurewebsites.net 
-
 ## Background
 
 I currently have a large ASP.NET web application which has services
